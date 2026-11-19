@@ -1,65 +1,330 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="he" dir="rtl">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Made Lara Visual</title>
-<meta name="description" content="Made Lara Visual: video, Instagram and content strategy for DJs, artists and events.">
+<title>Made Lara Visual Strategy</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;700;900&family=Heebo:wght@400;700;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;700;900&family=Heebo:wght@400;500;700;900&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
 <style>
-:root{--paper:#f1efe9;--ink:#0b0b0b;--red:#8f3027;--muted:#6b625c;--line:#d9d3c9;color-scheme:light}
+/* VOICE: same studio voice as the Made Lara Visual Price Builder, now for strategy (no editing)
+   IDEA: a printed rate card you tick off, with the quote building on the side
+   PICTURE: the live quote panel, large and black
+   COLOUR and TYPE: paper, ink, brick red; Archivo (Heebo for Hebrew), Plex Mono for figures
+   LAYOUT: services left, sticky quote right; stacks on phones with a bottom total bar */
+:root{
+  --paper:#f1efe9;--ink:#0b0b0b;--red:#8f3027;--muted:#6b625c;--line:#d9d3c9;
+  --display:"Archivo","Heebo","Helvetica Neue",Arial,sans-serif;
+  --body:"Archivo","Heebo","Helvetica Neue",Arial,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+  color-scheme:light;
+}
+:root[lang=he]{--display:"Heebo","Archivo",Arial,sans-serif;--body:"Heebo","Archivo",Arial,sans-serif}
 *{box-sizing:border-box;min-width:0}
 html,body{margin:0}
-body{background:var(--paper);color:var(--ink);font:16px/1.45 "Archivo","Heebo","Helvetica Neue",Arial,sans-serif;overflow-x:clip;min-height:100vh;
-  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .07 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
-.wrap{max-width:1180px;margin:0 auto;padding:clamp(28px,6vw,72px) 20px 48px}
-h1{font-weight:900;text-transform:uppercase;letter-spacing:-.02em;line-height:.88;font-size:clamp(48px,11vw,128px);margin:0;border-bottom:3px solid var(--ink);padding-bottom:20px}
-h1 span{color:var(--red)}
-.lead{font-size:clamp(17px,2.2vw,22px);font-weight:700;margin:18px 0 0;max-width:40ch}
-.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:20px;margin-top:36px}
-a.card{display:flex;flex-direction:column;justify-content:space-between;gap:28px;min-height:240px;padding:24px;text-decoration:none;color:var(--ink);border:3px solid var(--ink);background:transparent;transition:background .15s,color .15s}
-a.card.dark{background:var(--ink);color:var(--paper)}
-a.card h2{font-weight:900;text-transform:uppercase;font-size:clamp(26px,3.4vw,36px);line-height:1;margin:0}
-a.card p{margin:10px 0 0;font-size:15px;opacity:.8;max-width:38ch}
-a.card .go{font-weight:900;text-transform:uppercase;font-size:15px;display:flex;justify-content:space-between;align-items:center;border-top:2px solid currentColor;padding-top:14px}
-a.card .he{direction:rtl;font-family:"Heebo",Arial,sans-serif;font-size:14px;opacity:.75;margin-top:6px}
-a.card:hover{background:var(--red);border-color:var(--red);color:var(--paper)}
-a.card:focus-visible,footer a:focus-visible{outline:3px solid var(--red);outline-offset:3px}
-footer{margin-top:40px;display:flex;flex-wrap:wrap;gap:12px 24px;justify-content:space-between;color:var(--muted);font-size:14px;border-top:1px solid var(--line);padding-top:18px}
-footer a{color:var(--ink);font-weight:700}
-@media (prefers-reduced-motion:reduce){a.card{transition:none}}
+body{background:var(--paper);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.45;overflow-x:clip;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .07 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");}
+.wrap{max-width:1180px;margin:0 auto;padding:28px 20px 120px}
+header{display:flex;justify-content:space-between;align-items:flex-start;gap:16px;flex-wrap:wrap;border-bottom:3px solid var(--ink);padding-bottom:18px}
+.brand{font-family:var(--display);font-weight:900;text-transform:uppercase;letter-spacing:-.02em;line-height:.9;font-size:clamp(34px,6vw,64px);margin:0;text-wrap:balance}
+.brand span{color:var(--red)}
+.kicker{font-weight:700;font-size:clamp(17px,2.2vw,22px);margin:12px 0 0}
+.sub{margin:6px 0 0;color:var(--muted);max-width:60ch}
+.controls{display:flex;gap:8px;flex-wrap:wrap}
+.lang{display:flex;border:2px solid var(--ink)}
+.lang button{font:700 13px var(--body);padding:8px 14px;min-height:40px;background:transparent;border:0;cursor:pointer;color:var(--ink)}
+.lang button[aria-pressed="true"]{background:var(--ink);color:var(--paper)}
+.presets{display:flex;gap:10px;flex-wrap:wrap;margin:22px 0 6px;align-items:center}
+.presets .label{font-weight:700;font-size:13px;color:var(--muted);margin-inline-end:4px}
+.chip{font:700 14px var(--body);border:2px solid var(--ink);background:transparent;padding:8px 14px;min-height:40px;cursor:pointer;color:var(--ink)}
+.chip:hover{background:var(--ink);color:var(--paper)}
+.chip.ghost{border-color:var(--line);color:var(--muted)}
+.grid{display:grid;grid-template-columns:minmax(0,1fr) 360px;gap:32px;margin-top:18px;align-items:start}
+section.cat{margin-bottom:28px}
+.cat h2{font-family:var(--display);font-weight:900;text-transform:uppercase;font-size:22px;letter-spacing:-.01em;margin:0 0 10px}
+.item{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:14px;align-items:center;padding:14px 0;border-top:1px solid var(--line)}
+.item:last-child{border-bottom:1px solid var(--line)}
+.item .name{font-weight:700}
+.item .desc{color:var(--muted);font-size:14px;margin-top:2px}
+.item .price{font:600 14px var(--mono);margin-top:6px;font-variant-numeric:tabular-nums;white-space:nowrap}
+.item .note{display:inline-block;font:600 12px var(--body);color:var(--red);margin-inline-start:6px}
+.item.on .name{color:var(--red)}
+.toggle{width:46px;height:46px;border:2px solid var(--ink);background:transparent;font:900 22px var(--display);cursor:pointer;color:var(--ink)}
+.item.on .toggle{background:var(--red);border-color:var(--red);color:var(--paper)}
+.stepper{display:flex;align-items:center;border:2px solid var(--ink);direction:ltr}
+.stepper button{width:40px;height:42px;border:0;background:transparent;font:900 20px var(--display);cursor:pointer;color:var(--ink)}
+.stepper button:disabled{color:var(--line);cursor:default}
+.stepper output{min-width:38px;text-align:center;font:600 16px var(--mono)}
+.item.on .stepper{border-color:var(--red)}
+button:focus-visible,a:focus-visible{outline:3px solid var(--red);outline-offset:2px}
+aside{position:sticky;top:16px;background:var(--ink);color:var(--paper);padding:22px}
+aside h2{font-family:var(--display);font-weight:900;text-transform:uppercase;font-size:22px;margin:0 0 14px}
+.lines{list-style:none;margin:0;padding:0;display:grid;gap:8px;font-size:14px}
+.lines li{display:flex;justify-content:space-between;gap:12px}
+.lines li span:last-child,.row span:last-child{font-family:var(--mono);font-variant-numeric:tabular-nums;white-space:nowrap;direction:ltr}
+.lines li.credit span{color:#e8a49b}
+.empty{color:#a39a92;font-size:14px}
+.rule{border:0;border-top:1px solid #3a3533;margin:16px 0}
+.row{display:flex;justify-content:space-between;gap:12px;font-size:14px;margin:6px 0}
+.row.disc span:last-child{color:#e8a49b}
+.total{display:flex;justify-content:space-between;align-items:baseline;margin-top:10px;gap:12px}
+.total .k{font-weight:700;font-size:13px;color:#a39a92}
+.total .v{font:900 34px var(--display);font-variant-numeric:tabular-nums;white-space:nowrap;direction:ltr}
+.total .v small{font-size:16px}
+.tip{background:var(--red);color:var(--paper);padding:10px 12px;font-size:13px;margin-top:14px;font-weight:500}
+.cta{display:grid;gap:8px;margin-top:16px}
+.cta button,.cta a{display:block;text-align:center;font:900 15px var(--display);text-transform:uppercase;padding:14px;border:2px solid var(--paper);cursor:pointer;text-decoration:none}
+.cta .primary{background:var(--paper);color:var(--ink)}
+.cta .secondary{background:transparent;color:var(--paper)}
+.fine{font-size:12px;color:#a39a92;margin-top:12px}
+.more{margin:8px 0 0;border-top:3px solid var(--ink);padding-top:18px}
+.more a{font-weight:900;font-size:clamp(17px,2vw,20px);color:var(--ink);text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:4px}
+.more a:hover{color:var(--red)}
+.status{font-size:13px;color:#e8a49b;min-height:18px;margin-top:6px}
+.bar{display:none}
+@media (max-width:860px){
+  .grid{grid-template-columns:minmax(0,1fr)}
+  aside{position:static}
+  .bar{display:flex;position:fixed;left:0;right:0;bottom:0;background:var(--ink);color:var(--paper);padding:12px 16px;justify-content:space-between;align-items:center;gap:12px;z-index:5}
+  .bar .t{font:900 20px var(--display);font-variant-numeric:tabular-nums}
+  .bar .t small{display:block;font:700 11px var(--body);color:#a39a92}
+  .bar a{background:var(--paper);color:var(--ink);font:900 13px var(--display);padding:12px 14px;text-decoration:none}
+}
+@media (prefers-reduced-motion:no-preference){.item,.toggle{transition:background .15s,color .15s}}
 </style>
 </head>
 <body>
-<main class="wrap">
-  <h1>Made Lara <span>Visual</span></h1>
-  <p class="lead">Video, Instagram y estrategia de contenido para DJs, artistas y eventos.</p>
+<div class="wrap">
+  <header>
+    <div>
+      <h1 class="brand">Made Lara <span>Visual</span></h1>
+      <p class="kicker" id="t-kicker"></p>
+      <p class="sub" id="t-sub"></p>
+    </div>
+    <div class="controls">
+      <div class="lang" role="group" aria-label="Language">
+        <button id="lang-he" type="button" aria-pressed="false">עב</button>
+        <button id="lang-en" type="button" aria-pressed="true">EN</button>
+        <button id="lang-es" type="button" aria-pressed="false">ES</button>
+      </div>
+      <div class="lang" role="group" aria-label="Currency">
+        <button id="cur-usd" type="button" aria-pressed="true">$ USD</button>
+        <button id="cur-ils" type="button" aria-pressed="false">₪ ILS</button>
+      </div>
+    </div>
+  </header>
 
-  <div class="cards">
-    <a class="card dark" href="servicios/">
-      <div>
-        <h2>Servicios y precios</h2>
-        <p>Edición de video, Instagram, foto y marca. Elegí lo que necesitás y mirá el precio al instante.</p>
-        <p class="he">עריכת וידאו, אינסטגרם ומיתוג</p>
+  <div class="presets" id="presets"></div>
+
+  <div class="grid">
+    <main id="services"></main>
+    <aside id="quote" aria-live="polite">
+      <h2 id="t-yourquote"></h2>
+      <ul class="lines" id="lines"></ul>
+      <hr class="rule">
+      <div class="row"><span id="t-onesub"></span><span id="oneSub"></span></div>
+      <div class="row"><span id="t-monsub"></span><span id="monSub"></span></div>
+      <div class="row disc"><span id="discLabel"></span><span id="discVal"></span></div>
+      <div class="total"><span class="k" id="t-onetotal"></span><span class="v" id="oneTotal"></span></div>
+      <div class="total"><span class="k" id="t-montotal"></span><span class="v" id="monTotal"></span></div>
+      <div class="tip" id="tip"></div>
+      <div class="cta">
+        <button class="primary" id="copyBtn" type="button"></button>
+        <a class="secondary" id="dmLink" href="https://ig.me/m/made_laravisual" target="_blank" rel="noopener"></a>
       </div>
-      <span class="go">Armar mi paquete <span aria-hidden="true">→</span></span>
-    </a>
-    <a class="card" href="estrategia/">
-      <div>
-        <h2>Estrategia de contenido</h2>
-        <p>Para DJs y negocios de eventos: te digo qué grabar y qué publicar para conseguir más contrataciones.</p>
-        <p class="he">אסטרטגיית תוכן לדיג׳ייז ולאירועים</p>
-      </div>
-      <span class="go">Ver opciones <span aria-hidden="true">→</span></span>
-    </a>
+      <div class="status" id="status"></div>
+      <p class="fine" id="t-fine"></p>
+    </aside>
   </div>
+  <p class="more"><a id="t-edit" href="edicion/"></a></p>
+</div>
+<div class="bar"><div class="t" id="barTotal"></div><a href="#quote" id="t-bar"></a></div>
 
-  <footer>
-    <span>Precios en US$ y ₪</span>
-    <a href="https://ig.me/m/made_laravisual" target="_blank" rel="noopener">Instagram @made_laravisual</a>
-  </footer>
-</main>
+<script>
+{
+/* ===== Edit prices here. price = ₪ (before VAT), usd = US dollars. unit: "once" | "month". qty: true = quantity ===== */
+const SERVICES = [
+  {cat:"diag", items:[
+    {id:"audit", price:400, usd:110, unit:"once",
+      he:["אבחון אינסטגרם","ניתוח של 10 הרילס האחרונים שלך בסרטון של 10–15 דקות, עם 5 שינויים ברורים."],
+      en:["Instagram audit","Your last 10 Reels reviewed in a 10–15 min video, with 5 clear changes."],
+      es:["Auditoría de Instagram","Tus últimos 10 Reels analizados en un video de 10–15 min, con 5 cambios concretos."]}
+  ]},
+  {cat:"strategy", items:[
+    {id:"strategy", price:1900, usd:520, unit:"once",
+      he:["אסטרטגיית תוכן ל־3 חודשים","פגישה של 60 דקות, 30 רעיונות עם הוק, 10 תסריטים ומדריך צילום לאירועים."],
+      en:["3-month content strategy","60-min session, 30 ideas with hooks, 10 scripts and an event shot guide."],
+      es:["Estrategia de contenido de 3 meses","Sesión de 60 min, 30 ideas con gancho, 10 guiones y guía de grabación de eventos."]},
+    {id:"scripts", price:350, usd:95, unit:"once", qty:true,
+      he:["חבילת 5 תסריטים נוספים","שוט אחרי שוט: מה לומר, איזה טקסט ואיפה לחתוך."],
+      en:["Pack of 5 extra scripts","Shot by shot: what to say, what text and where to cut."],
+      es:["Pack de 5 guiones extra","Plano por plano: qué decir, qué texto y dónde cortar."]},
+    {id:"shotguide", price:450, usd:120, unit:"once", qty:true,
+      he:["מדריך צילום לסוג אירוע נוסף","רשימת 10–15 שוטים לבר מצווה, אירוע חברה או מסיבה."],
+      en:["Shot guide for another event type","10–15 shots for a wedding, corporate event or club night."],
+      es:["Guía de grabación para otro tipo de evento","10–15 planos para una boda, un evento de empresa o una noche de club."]}
+  ]},
+  {cat:"monthly", items:[
+    {id:"monthly", price:1500, usd:400, unit:"month",
+      he:["ליווי חודשי","רעיונות ותסריטים כל חודש, בדיקת רילס לפני פרסום, שיחה חודשית ותמיכה בוואטסאפ."],
+      en:["Monthly guidance","New ideas and scripts, Reel review before posting, a monthly call and WhatsApp support."],
+      es:["Acompañamiento mensual","Ideas y guiones cada mes, revisión de Reels antes de publicar, llamada mensual y WhatsApp."]},
+    {id:"call", price:300, usd:80, unit:"once", qty:true,
+      he:["שיחת ייעוץ נוספת","45 דקות על מה שתבחרו: רעיונות, נתונים או השקה."],
+      en:["Extra advice call","45 minutes on what you choose: ideas, numbers or a launch."],
+      es:["Llamada de asesoría extra","45 minutos sobre lo que elijas: ideas, métricas o un lanzamiento."]}
+  ]},
+  {cat:"team", items:[
+    {id:"workshop", price:2200, usd:600, unit:"once",
+      he:["סדנת צילום לצוות","2–3 שעות שבהן הצוות שלך לומד לצלם אירוע לרשתות."],
+      en:["Filming workshop for your team","2–3 hours where your team learns to film an event for social."],
+      es:["Taller de grabación para tu equipo","2–3 horas para que tu equipo aprenda a grabar un evento para redes."]}
+  ]}
+];
+const PRESETS = [
+  {id:"first", sel:{audit:1}, he:"צעד ראשון", en:"First step", es:"Primer paso"},
+  {id:"full", sel:{audit:1, strategy:1}, he:"אסטרטגיה מלאה", en:"Full strategy", es:"Estrategia completa"},
+  {id:"grow", sel:{strategy:1, monthly:1}, he:"צמיחה חודשית", en:"Monthly growth", es:"Crecimiento mensual"},
+  {id:"venue", sel:{strategy:1, shotguide:1, monthly:1, workshop:1}, he:"אולם או הפקה", en:"Venue or producer", es:"Salón o productora"}
+];
+const BUNDLE = {min:3, pct:10}; // different services, audit not counted
+
+const T = {
+  he:{kicker:"אסטרטגיית תוכן לדיג׳ייז ולאירועים", sub:"בחרו את מה שאתם צריכים וראו את המחיר מיד. אני אומרת לכם מה לצלם ומה לפרסם, אתם מצלמים.",
+    presets:"להתחיל מ:", clear:"ניקוי", cats:{diag:"אבחון",strategy:"אסטרטגיה",monthly:"ליווי",team:"הדרכה לצוות"},
+    once:"חד־פעמי", month:"/ חודש", each:"ליחידה", creditNote:"מקוזז אם ממשיכים לאסטרטגיה",
+    yourquote:"ההצעה שלך", none:"עוד לא נבחר כלום.", onesub:"סכום חד־פעמי", monsub:"סכום חודשי",
+    credit:"האבחון מקוזז מהאסטרטגיה", disc:(n,p)=>`הנחת חבילה (${n} שירותים, ‎−${p}%)`, nodisc:"הנחת חבילה",
+    onetotal:"תשלום חד־פעמי", montotal:"לחודש",
+    tip0:"משלבים 3 שירותים שונים ומקבלים 10% הנחה.", tip1:k=>`עוד ${k===1?"שירות אחד":k+" שירותים"} ומקבלים 10% הנחה.`, tip2:"יש לכם את מחיר החבילה: 10% הנחה.",
+    tipAudit:"מתחילים באבחון? אם ממשיכים לאסטרטגיה תוך 14 יום, הוא מקוזז.",
+    copy:"העתקת הבחירה שלי", copied:"הועתק. הדביקו בהודעה אליי.", copyfail:"ההעתקה לא עבדה כאן. סמנו את הטקסט בהצעה והעתיקו ידנית.",
+    dm:"הודעה באינסטגרם @made_laravisual", fine:{ils:"המחירים בש״ח ולא כוללים מע״מ. ההצעה הסופית נקבעת אחרי שיחה קצרה.", usd:"המחירים בדולר אמריקאי. העבודה כולה מתבצעת אונליין. ההצעה הסופית נקבעת אחרי שיחה קצרה."}, bar:"להצעה",
+    msgHead:"היי לארה! זו החבילה שמעניינת אותי:", edit:"מעדיפים שאני אערוך בשבילכם? לשירותי העריכה ←"},
+  en:{kicker:"Content strategy for DJs and events", sub:"Pick what you need and see your price instantly. I tell you what to film and what to post; you film it.",
+    presets:"Start from", clear:"Clear all", cats:{diag:"Audit",strategy:"Strategy",monthly:"Guidance",team:"Team training"},
+    once:"one-time", month:"/ month", each:"each", creditNote:"credited if you go on to the strategy",
+    yourquote:"Your quote", none:"Nothing selected yet.", onesub:"One-time subtotal", monsub:"Monthly subtotal",
+    credit:"Audit credited toward strategy", disc:(n,p)=>`Bundle discount (${n} services, −${p}%)`, nodisc:"Bundle discount",
+    onetotal:"Pay once", montotal:"Per month",
+    tip0:"Combine 3 different services to get 10% off.", tip1:k=>`Add ${k} more service${k>1?"s":""} to get 10% off.`, tip2:"You have the bundle price: 10% off.",
+    tipAudit:"Starting with the audit? If you go on to the strategy within 14 days, it's credited.",
+    copy:"Copy my selection", copied:"Copied. Paste it in your message to me.", copyfail:"Copy didn't work here. Select the text in the quote and copy it by hand.",
+    dm:"Message me on Instagram @made_laravisual", fine:{ils:"Prices in ₪, before VAT. Your final quote is confirmed after a short call.", usd:"Prices in US dollars. All work is done online. Your final quote is confirmed after a short call."}, bar:"See quote",
+    msgHead:"Hi Lara! This is the package I'm interested in:", edit:"Prefer that I edit for you? See editing services →"},
+  es:{kicker:"Estrategia de contenido para DJs y eventos", sub:"Elegí lo que necesitás y mirá el precio al instante. Yo te digo qué grabar y qué publicar; vos grabás.",
+    presets:"Empezá con", clear:"Borrar todo", cats:{diag:"Auditoría",strategy:"Estrategia",monthly:"Acompañamiento",team:"Formación del equipo"},
+    once:"pago único", month:"/ mes", each:"c/u", creditNote:"se descuenta si seguís con la estrategia",
+    yourquote:"Tu presupuesto", none:"Todavía no elegiste nada.", onesub:"Subtotal pago único", monsub:"Subtotal mensual",
+    credit:"Auditoría descontada de la estrategia", disc:(n,p)=>`Descuento por paquete (${n} servicios, −${p}%)`, nodisc:"Descuento por paquete",
+    onetotal:"Pago único", montotal:"Por mes",
+    tip0:"Combiná 3 servicios distintos y tenés 10% off.", tip1:k=>`Sumá ${k} servicio${k>1?"s":""} más y tenés 10% off.`, tip2:"Tenés el precio de paquete: 10% off.",
+    tipAudit:"¿Empezás con la auditoría? Si seguís con la estrategia en 14 días, se descuenta.",
+    copy:"Copiar mi selección", copied:"Copiado. Pegalo en tu mensaje para mí.", copyfail:"No se pudo copiar acá. Seleccioná el texto del presupuesto y copialo a mano.",
+    dm:"Escribime por Instagram @made_laravisual", fine:{ils:"Precios en ₪, sin IVA. El presupuesto final se confirma en una llamada corta.", usd:"Precios en dólares estadounidenses. Todo el trabajo es online. El presupuesto final se confirma en una llamada corta."}, bar:"Ver presupuesto",
+    msgHead:"¡Hola Lara! Este es el paquete que me interesa:", edit:"¿Preferís que edite yo? Ver servicios de edición →"}
+};
+
+const store = {get:k=>{try{return localStorage.getItem(k);}catch(e){return null;}}, set:(k,v)=>{try{localStorage.setItem(k,v);}catch(e){}}};
+const navLang = (navigator.language||"en").slice(0,2);
+let lang = ["he","en","es"].includes(store.get("mlv-lang")) ? store.get("mlv-lang") : (["he","es"].includes(navLang) ? navLang : "en");
+let cur = ["usd","ils"].includes(store.get("mlv-cur")) ? store.get("mlv-cur") : (lang==="he" ? "ils" : "usd");
+let sel = {...PRESETS[1].sel};
+const byId = {}; SERVICES.forEach(c=>c.items.forEach(i=>{byId[i.id]=i;}));
+const cost = it => cur==="usd" ? it.usd : it.price;
+const fmt = n => (cur==="usd" ? "$" : "₪") + Math.round(n).toLocaleString("en-US");
+const $ = id => document.getElementById(id);
+
+function renderPresets(){
+  const t=T[lang], box=$("presets"); box.innerHTML="";
+  const l=document.createElement("span"); l.className="label"; l.textContent=t.presets; box.appendChild(l);
+  PRESETS.forEach(p=>{const b=document.createElement("button"); b.type="button"; b.className="chip"; b.id="preset-"+p.id; b.textContent=p[lang];
+    b.onclick=()=>{sel={...p.sel}; renderServices(); calc();}; box.appendChild(b);});
+  const c=document.createElement("button"); c.type="button"; c.className="chip ghost"; c.id="preset-clear"; c.textContent=t.clear;
+  c.onclick=()=>{sel={}; renderServices(); calc();}; box.appendChild(c);
+}
+
+function renderServices(){
+  const t=T[lang], main=$("services"); main.innerHTML="";
+  SERVICES.forEach(c=>{
+    const s=document.createElement("section"); s.className="cat";
+    const h=document.createElement("h2"); h.textContent=t.cats[c.cat]; s.appendChild(h);
+    c.items.forEach(it=>{
+      const q=sel[it.id]||0, row=document.createElement("div"); row.className="item"+(q?" on":"");
+      const unitTxt = it.unit==="month" ? t.month : (it.qty ? t.each : t.once);
+      const note = it.id==="audit" ? `<span class="note">${t.creditNote}</span>` : "";
+      row.innerHTML=`<div><div class="name">${it[lang][0]}</div><div class="desc">${it[lang][1]}</div><div class="price"><bdi>${fmt(cost(it))}</bdi> ${unitTxt}${note}</div></div>`;
+      const ctl=document.createElement("div");
+      if(it.qty){
+        ctl.className="stepper";
+        ctl.innerHTML=`<button type="button" id="minus-${it.id}" aria-label="−">−</button><output id="q-${it.id}">${q}</output><button type="button" id="plus-${it.id}" aria-label="+">+</button>`;
+        ctl.children[0].disabled = q===0;
+        ctl.children[0].onclick=()=>{sel[it.id]=Math.max(0,q-1); if(!sel[it.id]) delete sel[it.id]; renderServices(); calc();};
+        ctl.children[2].onclick=()=>{sel[it.id]=q+1; renderServices(); calc();};
+      } else {
+        const b=document.createElement("button"); b.type="button"; b.className="toggle"; b.id="toggle-"+it.id;
+        b.setAttribute("aria-pressed", q?"true":"false"); b.setAttribute("aria-label", it[lang][0]); b.textContent=q?"✓":"+";
+        b.onclick=()=>{ if(q) delete sel[it.id]; else sel[it.id]=1; renderServices(); calc(); };
+        ctl.appendChild(b);
+      }
+      row.appendChild(ctl); s.appendChild(row);
+    });
+    main.appendChild(s);
+  });
+}
+
+function compute(){
+  let one=0, mon=0; const lines=[];
+  Object.entries(sel).forEach(([id,q])=>{ const it=byId[id]; if(!it||!q) return;
+    const amt=cost(it)*(it.unit==="month"?1:q);
+    if(it.unit==="month") mon+=amt; else one+=amt;
+    lines.push({it,q,amt}); });
+  const credit = sel.audit && sel.strategy ? cost(byId.audit) : 0;
+  const n = lines.filter(l=>l.it.id!=="audit").length;
+  const pct = n>=BUNDLE.min ? BUNDLE.pct : 0;
+  const oneNet = one - credit;
+  return {one, mon, lines, n, pct, credit, oneT:oneNet*(1-pct/100), monT:mon*(1-pct/100), saved:(oneNet+mon)*pct/100};
+}
+
+function calc(){
+  const t=T[lang], r=compute(), ul=$("lines"); ul.innerHTML="";
+  if(!r.lines.length) ul.innerHTML=`<li class="empty">${t.none}</li>`;
+  r.lines.forEach(({it,q,amt})=>{ const li=document.createElement("li");
+    li.innerHTML=`<span>${it.qty?q+" × ":""}${it[lang][0]}</span><span>${fmt(amt)}${it.unit==="month"?" "+t.month:""}</span>`; ul.appendChild(li); });
+  if(r.credit){ const li=document.createElement("li"); li.className="credit";
+    li.innerHTML=`<span>${t.credit}</span><span>−${fmt(r.credit)}</span>`; ul.appendChild(li); }
+  $("oneSub").textContent=fmt(r.one-r.credit); $("monSub").textContent=fmt(r.mon);
+  $("discLabel").textContent = r.pct ? t.disc(r.n,r.pct) : t.nodisc;
+  $("discVal").textContent = r.pct ? "−"+fmt(r.saved) : fmt(0);
+  $("oneTotal").textContent=fmt(r.oneT); $("monTotal").textContent=fmt(r.monT);
+  $("tip").textContent = (sel.audit && !sel.strategy) ? t.tipAudit : (r.n>=BUNDLE.min ? t.tip2 : (r.n>0 ? t.tip1(BUNDLE.min-r.n) : t.tip0));
+  $("barTotal").innerHTML = `<small>${t.onetotal} · ${t.montotal}</small><bdi>${fmt(r.oneT)} · ${fmt(r.monT)}</bdi>`;
+}
+
+function message(){
+  const t=T[lang], r=compute();
+  const rows=r.lines.map(({it,q,amt})=>`• ${it.qty?q+" × ":""}${it[lang][0]}: ${fmt(amt)}${it.unit==="month"?" "+t.month:""}`);
+  return [t.msgHead, ...rows, r.credit?`• ${t.credit}: −${fmt(r.credit)}`:null,
+    r.pct?`${t.nodisc}: −${r.pct}%`:null, `${t.onetotal}: ${fmt(r.oneT)}`, `${t.montotal}: ${fmt(r.monT)}`].filter(Boolean).join("\n");
+}
+
+function applyLang(){
+  const t=T[lang], root=document.documentElement;
+  root.lang=lang; root.dir = lang==="he" ? "rtl" : "ltr";
+  ["he","en","es"].forEach(l=>$("lang-"+l).setAttribute("aria-pressed", l===lang));
+  ["usd","ils"].forEach(c=>$("cur-"+c).setAttribute("aria-pressed", c===cur));
+  $("t-kicker").textContent=t.kicker; $("t-sub").textContent=t.sub; $("t-yourquote").textContent=t.yourquote;
+  $("t-onesub").textContent=t.onesub; $("t-monsub").textContent=t.monsub; $("t-onetotal").textContent=t.onetotal; $("t-montotal").textContent=t.montotal;
+  $("copyBtn").textContent=t.copy; $("dmLink").textContent=t.dm; $("t-fine").textContent=t.fine[cur]; $("t-bar").textContent=t.bar; $("t-edit").textContent=t.edit; $("status").textContent="";
+  renderPresets(); renderServices(); calc();
+}
+
+["he","en","es"].forEach(l=>{ $("lang-"+l).onclick=()=>{lang=l; store.set("mlv-lang",l); applyLang();}; });
+["usd","ils"].forEach(c=>{ $("cur-"+c).onclick=()=>{cur=c; store.set("mlv-cur",c); applyLang();}; });
+$("copyBtn").onclick=async()=>{ try{ await navigator.clipboard.writeText(message()); $("status").textContent=T[lang].copied; } catch(e){ $("status").textContent=T[lang].copyfail; } };
+applyLang();
+}
+</script>
 </body>
 </html>
